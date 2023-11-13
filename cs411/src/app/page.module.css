@@ -1,4 +1,3 @@
-/* Main Content Styles */
 .main {
   display: flex;
   flex-direction: column;
@@ -10,7 +9,7 @@
 
 .intro {
   max-width: 1200px;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .fullWidthImageSection img {
@@ -43,6 +42,7 @@
 .textContent {
   font-size: 1.5rem;
   line-height: 1.6;
+  margin-bottom: 4rem;
 }
 
 .featuredPost, .recentPosts {
@@ -72,7 +72,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   font-weight: bold;
-  margin-top: 40px; 
+  margin-top : 40px !important; 
   text-decoration: none; 
 }
 
