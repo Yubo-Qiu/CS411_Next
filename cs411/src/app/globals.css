@@ -28,14 +28,10 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  /* This ensures that your application takes up the full height of the screen */
-  min-height: 100vh; /* This line ensures the minimum height is the full viewport height */
-  /* Consider adding this to make sure your background extends to the full page */
-  background: var(--color-background, #fff); /* Replace with your actual variable or color */
+  min-height: 100vh; 
+  background: var(--color-background, #fff); 
 }
 
-/* This is for your sticky navbar issue */
 .navbar {
-  width: 100%; /* Ensure the navbar takes full width */
-  /* rest of your styles */
+  width: 100%; 
 }

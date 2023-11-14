@@ -1,0 +1,48 @@
+import Head from 'next/head';
+import Image from 'next/image';
+import Navbar from '../components/Navbar'; 
+import Footer from '../components/Footer'; 
+import styles from './page.module.css'; 
+
+function Login() {
+  // Handling Google Sign-In event
+  const handleGoogleSignIn = (e) => {
+    e.preventDefault();
+    signInWithGoogle();
+  };
+
+  return (
+    <>
+      <Navbar />
+      <div className={styles.background}>
+      <div className={styles.formWrapper}>
+        <form method="POST" className={styles.loginForm} action="/dashboard">
+          <div className={styles.formGroup}>
+            <label htmlFor="username" className={styles.formLabel}>Username</label>
+            <input type="text" id="username" name="username" className={styles.input} required />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="password" className={styles.formLabel}>Password</label>
+            <input type="password" id="password" name="password" className={styles.input} required />
+          </div>
+          <div className={styles.formAction}>
+            <button type="submit" className={styles.loginButton}>Login</button>
+          </div>
+          <div className={styles.googleSignIn}>
+            <p>or sign in with:</p>
+            <div className={styles.iconContainer} onClick = {handleSignIn}>
+              <img src="google.jpg" alt="Sign in with Google" />
+            </div>
+            <div className={styles.iconContainer} >
+              <img src="facebook.jpg" alt="Sign in with Google" />
+            </div>
+          </div>
+        </form>
+      </div>
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+export default Login;

@@ -1,0 +1,94 @@
+.background {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #fff url('/back.png') no-repeat center center fixed; 
+  background-size: cover;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of the viewport */
+  padding: 0 20px; /* Padding on the sides */
+  background-color: rgba(255, 255, 255, 0.8); /* white with a bit of transparency */
+  backdrop-filter: blur(10px);
+}
+
+.loginForm {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin-top: -10%;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formLabel {
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.formAction {
+  margin-top: 2rem;
+}
+
+.loginButton {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.googleSignIn {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.googleButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.iconContainer {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  margin: 0 10px;
+}
+
+.iconContainer img {
+  width: auto;
+  height: 100%;
+}
+
+.iconContainer:hover,
+.googleButton:hover .googleLogo {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
