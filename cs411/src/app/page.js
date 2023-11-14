@@ -28,7 +28,7 @@ export default function Home() {
           </Link>
         </section>
         <section className={styles.fullWidthImageSection}>
-          <Image src="/back.png" alt="Descriptive Image Text" layout="responsive" width={1100} height={619} />
+          <Image src="/back.png" alt="Descriptive Image Text" width={1100} height={619} />
         </section>
       </main>
       <Footer />
