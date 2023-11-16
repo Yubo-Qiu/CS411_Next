@@ -1,11 +1,34 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 import Image from 'next/image';
 import Navbar from '../components/Navbar'; 
 import Footer from '../components/Footer'; 
 import styles from './page.module.css'; 
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../firebase'
 
 function Login() {
-  // Handling Google Sign-In event
+  const router = useRouter();
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // Handle the successful authentication here
+        // You can access user info with result.user
+        if (typeof window !== 'undefined') {
+          window.location.href = '/dashboard';
+        }
+      })
+      .catch((error) => {
+        // H rs here
+        console.error(error);
+      });
+  };
+
+
   const handleGoogleSignIn = (e) => {
     e.preventDefault();
     signInWithGoogle();
@@ -30,7 +53,7 @@ function Login() {
           </div>
           <div className={styles.googleSignIn}>
             <p>or sign in with:</p>
-            <div className={styles.iconContainer} onClick = {handleSignIn}>
+            <div className={styles.iconContainer} onClick = {handleGoogleSignIn}>
               <img src="google.jpg" alt="Sign in with Google" />
             </div>
             <div className={styles.iconContainer} >
@@ -44,5 +67,7 @@ function Login() {
     </>
   );
 }
+
+
 
 export default Login;
