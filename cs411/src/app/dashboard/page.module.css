@@ -1,0 +1,98 @@
+/* CSS Reset */
+
+.pageContainer {
+  display: flex;
+  min-height: 100vh; /* Use viewport height to ensure full coverage */
+  width: 100%;
+}
+
+/* Main Content Styles */
+.main {
+  background-color: #e6e6e6;
+  padding-left: 100px; /* Width of your left sidebar */
+  padding-right: 280px; /* Adjust based on the width of your left sidebar */
+  flex-grow: 1; /* Ensure main content takes the remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.graphRectangle {
+  width: 90%; /* Adjust based on your preference */
+  height: 60%; /* Adjust based on your preference */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  border-radius: 25px; /* Optional: Rounds the corners */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around; /* Distribute space between buttons */
+  margin-top: 2%; /* Space between graph and buttons */
+  margin-bottom: 2%;
+  width: 91.4%;
+}
+
+.actionButton {
+  width: 48.5%; /* Adjust based on your preference */
+  padding: 1% 0; /* Vertical padding */
+  color: #000000; /* Black text */
+  background-color: #ffffff; /* White background */
+  border: none; /* Remove default border */
+  border-radius: 30px; /* Rounds the corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 28px; /* Font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  text-align: center; /* Center text */
+}
+
+.actionButton:hover {
+  background-color: #acacac; /* Darker color on hover */
+}
+
+.infoRectangle {
+  width: 87.7%; /* Same as graphRectangle */
+  height: 20%; /* Adjust based on your preference */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  border-radius: 25px; /* Rounds the corners */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Padding */
+  margin-bottom: 20px; /* Bottom margin */
+  margin-top: 20px; /* Top margin */
+}
+
+.infoSection {
+  width: 32%; /* Adjust if needed */
+  text-align: left; /* Align text to the left */
+  font-size: 22px; /* Font size */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  align-items: flex-start; /* Align content to the left */
+  line-height: 1.5; /* Line height */
+  overflow-wrap: break-word; /* Prevent overflow */
+  padding: 10px; /* Padding inside the info section */
+  position: relative; /* Relative positioning */
+  font-weight: bold; /* Bold font */
+  color: #1478ee; /* Blue color */
+}
+
+.highlight {
+  color: #FFA500; /* Orange color */
+  font-size: 36px; /* Font size */
+  font-weight: bold; /* Bold font */
+}
+
+.infoSection:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 1%; /* Adjust as needed */
+  bottom: 1%; /* Adjust as needed */
+  width: 1px; /* Thickness of the split line */
+  background-color: #ccc; /* Color of the split line */
+}

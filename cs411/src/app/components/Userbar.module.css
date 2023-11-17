@@ -1,0 +1,75 @@
+.sidebar {
+    width: 280px; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+  }
+  
+  .profileContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .profileImage {
+    width: 40%; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image a circle */
+    object-fit: cover; /* Ensures the image covers the circle area */
+    border: 2px solid #ffffff; /* Optional: Adds a white border */
+  }
+  
+  .username {
+    text-align: center;
+    font-size: 1.5rem; /* Adjust size as needed */
+    margin-top: 1rem; /* Adjust size as needed */
+    color: #000000; /* Font color */
+    font-weight: bold;
+  }
+  
+  .info {
+    margin-top: 2rem; /* Adjust as needed */
+  }
+  
+  .infoLine {
+    font-size: 1.2rem;
+    margin-bottom: 1rem; /* Increased space between text and friend cards */
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .friends {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Ensure no padding is applied */
+    margin: 0; /* Ensure no margin is applied */
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  
+  .friendCard {
+    background-color: #ffffff;
+    padding: 1.1rem;
+    font-size: 1rem;
+    width: 100%; /* Makes each friend card take up the full width */
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+    margin-bottom: 0rem; /* Adds some space between friend cards */
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .friendCard:hover {
+    background-color: #eaeaea;
+  }
+  
+  .friendCard.active {
+    background-color: #eaeaea;
+  }
+  
+  .friends .friendCard:first-child {
+    border-top: 1px solid #eaeaea;
+  }
+  

@@ -8,7 +8,7 @@ const AuthContext = createContext()
 
 
 export const AuthContextProvider = ({ children }) => {
-    const [user, setUser] = useState('Clint')
+    const [user, setUser] = useState(null)
 
     const googleSignIn = () => {
         const provider = new GoogleAuthProvider();
@@ -20,15 +20,15 @@ export const AuthContextProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-          setUser(currentUser);
-        });
-        return () => unsubscribe();
-    }, [user]);
-
+        const checkAuthentication = async () => {
+          await new Promise((resolve) => setTimeout(resolve, 50));
+          setLoading(false);
+        };
+        checkAuthentication();
+      }, [user]);
 
     return (
-        <AuthContext.Provider value={{ user, googleSignIn, logOut }}>
+        <AuthContext.Provider value={{ user, setUser, googleSignIn, logOut }}>
           {children}
         </AuthContext.Provider>
     );

@@ -1,0 +1,49 @@
+.sidebar {
+    width: 100px; /* Adjust width as needed */
+    height: 100vh; /* Full viewport height */
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 1rem;
+  }
+  
+  .logoutButton {
+    background-color: #ffffff; /* Background color for the logout button */
+    color: #333; /* Text color for contrast */
+    text-align: center; /* Center the text inside the button */
+    border-radius: 4px; /* Rounded corners for aesthetic */
+    padding: 10px 0; /* Padding inside the button only top and bottom */
+    box-sizing: border-box; /* Include padding and border in the width */
+    display: block; /* Display block for the width to take effect */
+    margin: 0 auto; /* Auto margins for horizontal centering */
+    transition: background-color 0.3s; /* Transition for the background color */
+    font-size: 1rem; /* Increased font size for the button text */
+    text-decoration: none; /* No underline for the text */
+    font-weight: bold;
+    position: absolute; /* Absolute positioning relative to sidebar */
+    bottom: 80px; /* Adjusted to 60px from the bottom as per your code */
+    left: 10%; /* Left position to offset the reduced width */
+    right: 10%; /* Right position to offset the reduced width */
+  }
+  
+  .logoutButton:hover {
+    background-color: #eeeeee; /* Darken button color on hover */
+    transform: scale(1.05); /* Slightly increase the size on hover for effect */
+  }
+  
+  .sidebar ul li:last-child {
+    margin-top: auto; /* This will push the logout button towards the bottom */
+    margin-bottom: 100px; /* This is the space from the bottom of the sidebar */
+  }
+  
