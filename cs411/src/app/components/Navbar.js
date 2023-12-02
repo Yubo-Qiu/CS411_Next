@@ -22,8 +22,8 @@ export default function Navbar() {
             </Link>
           </li>
           <li className={styles.navbarItem}>
-            <Link legacyBehavior href={"/contact"} >
-              <a className={styles.navLink}>Contact</a>
+            <Link legacyBehavior href={"/news"} >
+              <a className={styles.navLink}>News</a>
             </Link>
           </li>
         </ul>

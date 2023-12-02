@@ -1,0 +1,36 @@
+.background {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Using viewport height to ensure it covers the whole view */
+    overflow: hidden;
+    background:  #fff url('/back.png') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    padding: 0 20px; /* Padding on the sides */
+    background-color: rgba(255, 255, 255, 0.8); /* white with a bit of transparency */
+    backdrop-filter: blur(10px);
+    height: auto;
+    padding-top: 60px !important;
+}
+
+.contentContainer {
+    overflow: auto;
+    padding-top: 30px !important;
+    width: 100%;
+    max-width: 800px; /* Adjust based on your preference */
+    margin: 0 auto; /* Centers the container */
+    box-sizing: border-box;
+    padding-bottom: 100px;
+
+}
+
+.newsItem {
+    margin-bottom: 60px !important; 
+}
