@@ -8,6 +8,7 @@ import styles from './page.module.css';
 import React, { useEffect, useState } from 'react';
 import Chart from 'react-apexcharts';
 import fetchStockData from './api'; 
+import dynamic from 'next/dynamic';
 
 
 
@@ -20,7 +21,7 @@ const Dashboard = () => {
       try {
         const apiData = await fetchStockData('TSLA'); // Fetch the data
         // Transform the data to fit the chart requirements
-        const transformedData = Object.entries(apiData['Time Series (5min)']).map(([date, data]) => { 
+        const transformedData = Object.entries(apiData['Time Series (60min)']).map(([date, data]) => { 
           return {
             x: new Date(date), // use 'date' here, which represents the timestamp
             y: parseFloat(data['4. close']) // parse the closing value for the y-axis
@@ -39,26 +40,27 @@ const Dashboard = () => {
     chart: {
       id: 'basic-line',
       type: 'line',
-      height: 350,
+      height: 200,
       toolbar: {
         show: false // Hides the toolbar for more space
       },
     },
     grid: {
       padding: {
-        left: 10, // Adjust left padding
-        right: 10, // Adjust right padding
-        paddingBottom: 20,
+        left: 30, // Adjust left padding
+        right: 30, // Adjust right padding
+        bottom: 0,
+        top: 10,
       },
     },
     xaxis: {
       labels: {
         formatter: function (val) {
-          return new Date(val).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); // Formats the date as "Jan 1"
+          return new Date(val).toLocaleDateString('en-US', { hour: '2-digit', hour12: false }); // Formats the date as "Jan 1"
         },
         trim: true, // Trims the labels if they overflow
         rotate: -45, // Rotates labels
-        minHeight: 100,
+        minHeight: 80,
       },
     },
     stroke: {
