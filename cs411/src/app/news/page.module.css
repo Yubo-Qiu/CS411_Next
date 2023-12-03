@@ -1,36 +1,48 @@
-.background {
-    margin: 0;
-    padding: 0;
-    height: 100vh; /* Using viewport height to ensure it covers the whole view */
-    overflow: hidden;
-    background:  #fff url('/back.png') no-repeat center center fixed; 
+.combinedWrapper {
+    margin: 0 auto; /* Center the wrapper */
+    padding: 20px; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the start */
+    align-items: center;
+    background: #fff url('/back.png') no-repeat center center fixed; 
     background-size: cover;
+    min-height: 100vh; /* Ensure it covers at least the whole viewport */
+    overflow: auto; /* Enable scrolling */
 }
 
-.formWrapper {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height of the viewport */
-    padding: 0 20px; /* Padding on the sides */
-    background-color: rgba(255, 255, 255, 0.8); /* white with a bit of transparency */
-    backdrop-filter: blur(10px);
-    height: auto;
-    padding-top: 60px !important;
-}
 
 .contentContainer {
-    overflow: auto;
-    padding-top: 30px !important;
     width: 100%;
-    max-width: 800px; /* Adjust based on your preference */
-    margin: 0 auto; /* Centers the container */
+    max-width: 800px;
+    margin: 0 auto;
     box-sizing: border-box;
-    padding-bottom: 100px;
-
+    padding-bottom: 40px;
+    padding-top: 60px;
 }
 
 .newsItem {
     margin-bottom: 60px !important; 
 }
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px; /* Padding on the sides */
+    background-color: rgba(255, 255, 255, 0.8); /* white with a bit of transparency */
+    backdrop-filter: blur(10px);
+    background-size: cover;
+}
+
+.newsHeading {
+    font-size: 45px; /* Adjust the font size as needed */
+    font-weight: bold; /* Make the heading bold */
+    color: #000000; /* Set the color, adjust as needed */
+    margin-bottom: 60px; 
+    text-align: center;
+}
+
+.highlight {
+    color: #1478ee;
+  }
