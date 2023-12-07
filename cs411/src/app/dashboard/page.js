@@ -49,11 +49,17 @@ const Dashboard = () => {
       padding: {
         left: 10, // Adjust left padding
         right: 10, // Adjust right padding
+        paddingBottom: 20,
       },
     },
     xaxis: {
       labels: {
+        formatter: function (val) {
+          return new Date(val).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); // Formats the date as "Jan 1"
+        },
         trim: true, // Trims the labels if they overflow
+        rotate: -45, // Rotates labels
+        minHeight: 100,
       },
     },
     stroke: {

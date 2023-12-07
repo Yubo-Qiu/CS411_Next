@@ -20,11 +20,10 @@
 
 .graphRectangle {
   width: 90%; /* Adjust based on your preference */
-  height: 72%; /* Adjust based on your preference */
+  height: 60%; /* Adjust based on your preference */
   background-color: #ffffff; /* White background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
   border-radius: 25px; /* Optional: Rounds the corners */
-  padding-bottom: 20px;
 }
 
 .buttonContainer {
