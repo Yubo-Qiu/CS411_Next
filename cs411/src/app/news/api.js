@@ -21,7 +21,7 @@ const fetchNewsData = async () => {
     
 
 
-        return response.data.articles.slice(0,10); // Return the data
+        return response.data.articles.slice(0,3); // Return the data
     } catch (error) {
         console.error('Error fetching news:', error);
         throw error; // Rethrow the error

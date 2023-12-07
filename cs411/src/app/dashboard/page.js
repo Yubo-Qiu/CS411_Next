@@ -1,85 +1,15 @@
-"use client"
-
-
+import Head from 'next/head';
+import Image from 'next/image';
+import Navbar from '../components/Navbar'; 
+import Footer from '../components/Footer'; 
 import Userbar from '../components/Userbar'; 
+import Sidebarbar from '../components/Userbar'; 
+import dynamic from 'next/dynamic';
+import { UserAuth } from "../context/AuthContext";
 import Sidebar from '../components/Sidebar';
 import styles from './page.module.css'; 
 
-import React, { useEffect, useState } from 'react';
-import Chart from 'react-apexcharts';
-import fetchStockData from './api'; 
-import dynamic from 'next/dynamic';
-
-
-
 const Dashboard = () => {
-
-  const [graphData, setGraphData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const apiData = await fetchStockData('TSLA'); // Fetch the data
-        // Transform the data to fit the chart requirements
-        const transformedData = Object.entries(apiData['Time Series (60min)']).map(([date, data]) => { 
-          return {
-            x: new Date(date), // use 'date' here, which represents the timestamp
-            y: parseFloat(data['4. close']) // parse the closing value for the y-axis
-          };
-        }).reverse();
-        setGraphData([{ data: transformedData }]); // Set the transformed data in state
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  const chartOptions = {
-    chart: {
-      id: 'basic-line',
-      type: 'line',
-      height: 200,
-      toolbar: {
-        show: false // Hides the toolbar for more space
-      },
-    },
-    grid: {
-      padding: {
-        left: 30, // Adjust left padding
-        right: 30, // Adjust right padding
-        bottom: 0,
-        top: 10,
-      },
-    },
-    xaxis: {
-      labels: {
-        formatter: function (val) {
-          return new Date(val).toLocaleDateString('en-US', { hour: '2-digit', hour12: false }); // Formats the date as "Jan 1"
-        },
-        trim: true, // Trims the labels if they overflow
-        rotate: -45, // Rotates labels
-        minHeight: 80,
-      },
-    },
-    stroke: {
-      curve: 'smooth',
-    },
-    title: {
-      text: 'Stock for TSLA for today',
-      align: 'center',
-    },
-    markers: {
-      size: 1,
-    },
-    tooltip: {
-      shared: true,
-      intersect: false,
-    },
-  };
-
-
   return (
     <>
       <div className={styles.pageContainer}>
@@ -99,9 +29,6 @@ const Dashboard = () => {
           </div>  
           <div className={styles.graphRectangle}>
             {/* Your graph content goes here */}
-            {typeof window !== "undefined" && (
-              <Chart options={chartOptions} series={graphData} type="line" />
-            )}
           </div>
           <div className={styles.buttonContainer}>
             <button className={styles.actionButton}>Trade History</button>
