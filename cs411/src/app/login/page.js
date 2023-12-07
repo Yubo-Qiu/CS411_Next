@@ -8,6 +8,8 @@ import Footer from '../components/Footer';
 import styles from './page.module.css'; 
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../firebase'
+import { database } from '../firebase';
+import { ref, set } from 'firebase/database';
 
 function Login() {
   const router = useRouter();
@@ -16,11 +18,14 @@ function Login() {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
+        const user = result.user;
+        writeUserData(user);
         // Handle the successful authentication here
         // You can access user info with result.user
         if (typeof window !== 'undefined') {
-          window.location.href = '/dashboard';
-        }
+          window.location.href = '/dashboard';  
+        } 
+
       })
       .catch((error) => {
         // H rs here
@@ -29,10 +34,29 @@ function Login() {
   };
 
 
+
+  const writeUserData = (user) => {
+    set(ref(database, 'users/' + user.uid), {
+      name: user.displayName,
+      email: user.email,
+    })    
+    .then(() => {
+        alert("User data stored successfully.");
+    })
+    .catch((error) => {
+        alert("Error storing user data:");
+        console.error(error);
+    });
+  };
+
+
   const handleGoogleSignIn = (e) => {
     e.preventDefault();
     signInWithGoogle();
+
   };
+
+
 
   return (
     <>

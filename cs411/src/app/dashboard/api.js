@@ -18,4 +18,4 @@ const fetchStockData = async (symbol) => {
   }
 };
 
-export default fetchStockData;
+export default fetchStockData;  
