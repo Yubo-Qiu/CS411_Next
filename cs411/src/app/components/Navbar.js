@@ -16,11 +16,7 @@ export default function Navbar() {
               <a className={styles.navLink}>Home</a>
             </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <Link legacyBehavior href={"/about"} >
-              <a className={styles.navLink}>About</a>
-            </Link>
-          </li>
+
           <li className={styles.navbarItem}>
             <Link legacyBehavior href={"/news"} >
               <a className={styles.navLink}>News</a>

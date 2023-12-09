@@ -18,11 +18,20 @@ export default function Home() {
             Welcome to <span className={styles.highlight}>Daddy's Stock</span>! 😈
           </h1>
           <p className={styles.textContent}>
-            Dive into the universe through Astro Blog, where we explore the wonders of space, 
-            unravel the mysteries of the cosmos, and share insights on the latest astronomical 
-            discoveries. Whether you're a seasoned astronomer or just starting out, 
-            there's something here for everyone. Join us on this stellar journey.
+          At Daddy's Stock, we are dedicated to bringing you the latest and most comprehensive global news coverage. Our 
+          platform is designed to keep you informed about the world's events, with a special focus on insightful analysis and 
+          diverse perspectives.
           </p>
+          <p className={styles.textContent}>
+          But that's not all! For finance enthusiasts and investors, we offer a specialized feature that allows you to track 
+          Tesla's stock price in real-time. Our intuitive stock chart provides a detailed view of Tesla's stock performance, 
+          helping you make informed decisions.
+          </p>
+          <p className={styles.textContent}>
+          Whether you're keeping up with international headlines or monitoring the fluctuations in the stock market, Daddy's Stock 
+          is your reliable source for up-to-date information. Stay informed, stay ahead!
+          </p>
+          
           <Link legacyBehavior href={"/login"} >
             <a className={styles.blueButton}>Let's Go 💫</a>
           </Link>
